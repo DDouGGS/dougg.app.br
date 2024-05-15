@@ -16,6 +16,6 @@ class HomeController extends Controller
      */
     public function home(){
         $posts = User::all();
-        return view('home',compact('posts'));
+        return view('landpage',compact('posts'));
     }
 }
