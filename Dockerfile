@@ -5,8 +5,12 @@ LABEL maintainer="ddouggs"
 
 RUN apt-get update && apt-get upgrade -y
 
-WORKDIR /usr/share/nginx/html
+COPY ./docker/default.conf /etc/nginx/sites-available/default
 
-EXPOSE 80
+RUN nginx -t
+
+WORKDIR /var/www/html
+
+EXPOSE 80 443
 
 CMD ["nginx", "-g", "daemon off;"]
