@@ -1,6 +1,16 @@
 # gitignore
-vendor/
-docs/
+# composer
+# vendor/
+# composer.lock
+# vscode
+.vscode/
+*.code-workspace
+# docker
+docker/
+docker-compose.yml
+Dockerfile
+#outhers
 README.md
 LICENSE
 LICENSE.txt
+# docs/
