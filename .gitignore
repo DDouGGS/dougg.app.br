@@ -1,7 +1,8 @@
 # gitignore
 # composer
-# vendor/
-# composer.lock
+vendor/
+composer.json
+composer.lock
 # vscode
 .vscode/
 *.code-workspace
@@ -13,4 +14,8 @@ Dockerfile
 README.md
 LICENSE
 LICENSE.txt
-# docs/
+docs/
+# node
+node_modules/
+package.json
+package-lock.json
