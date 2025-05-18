@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailer;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', function () { return view('index');});
+Route::post(
+    '/contact', 
+    function() {
+        // O envio do email é feito usando o método to na facade Mail
+        // Mail::to(config('mail')['mailers']['smtp']['username'])->send(new ContactMail('Dougg TI'));
+        $mailer = new Mailer();
+        return $mailer->send('mail_contact');
+    }
+);
